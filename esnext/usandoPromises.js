@@ -22,23 +22,24 @@ const getTurma = letra => {
     })
 }
 
-let nomes = []
-getTurma('A').then(alunos => {
-    //console.log(alunos[0].nome)
-    nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
-    //console.log(nomes)
-
-    getTurma('B').then(alunos => {
-        nomes = nomes.concat(alunos.map(a => `B: ${a.nome}`))
-        //console.log(nomes)
-        getTurma('C').then(alunos => {
-            nomes = nomes.concat(alunos.map(a => `C: ${a.nome}`))
-            console.log(nomes)
-        })
-    })
-})
+// let nomes = []
+// getTurma('A').then(alunos => {
+//     //console.log(alunos[0].nome)
+//     nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
+//     //console.log(nomes)
+//
+//     getTurma('B').then(alunos => {
+//         nomes = nomes.concat(alunos.map(a => `B: ${a.nome}`))
+//         //console.log(nomes)
+//         getTurma('C').then(alunos => {
+//             nomes = nomes.concat(alunos.map(a => `C: ${a.nome}`))
+//             console.log(nomes)
+//         })
+//     })
+// })
 
 Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])
     .then(turmas => [].concat(...turmas))
     .then(alunos => alunos.map(aluno => aluno.nome))
     .then(nomes => console.log(nomes))
+getTurma('D').catch(e => console.log(e.message))
