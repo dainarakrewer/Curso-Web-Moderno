@@ -6,7 +6,24 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* UNIVERSAL - * */
+        /* classe - .tag */
+        /* id - #aprovados */
+        /* dentro da div aninhado, pegar o elemento div - #aninhado > div */
+        /* qualquer descendente de aninhado sendo section sera selecionado - #aninhado section */
+        /* irmãos adjascentes - seleciona ul - p + ul */
+        /*irmãos gerais - seleciona ol - p ~ ol */
+        /* tem como propriedade feira - [feira] */
+        /* quando o atributo feira tiver o valor casa - [feira=casa] */
+        /* quando o atributo feira tiver o possível valor escritorio - [feira~=escritorio] */
+        /* quando o atributo feira tiver o valor contido sa - [feira*=sa] */
+        /* span que for filho de alguém e que esteja na segunda posição - span:nth-child(2) */
+        /* section que tem filhos ímpares - section > :nth-child(odd) */
+        /* section que tem filhos ímpares e ul - section > :nth-child(odd), ul */
+        section > :nth-child(odd), ul {
+            color: #ff0;
+            background-color: #f77;
+        }
     </style>
 </head>
 
