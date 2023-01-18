@@ -12,7 +12,19 @@
         Classes
     </div>
     <script>
-        // ...
+        const classes = document.querySelector('div').classList
+        // adiciona estilo
+        classes.add('destaque')
+        // remove estilo
+        classes.remove('destaque')
+        // se estiver com estilo remove e se estiver sem estilo adiciona
+        classes.toggle('destaque')
+        // se contém destaque
+        console.log(classes.contains('destaque'))
+        // quantas classes tem
+        console.log(classes.length)
+        classes.toggle('destaque')
+        console.log(classes.length)
     </script>
 </body>
 

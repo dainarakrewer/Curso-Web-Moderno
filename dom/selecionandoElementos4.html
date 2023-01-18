@@ -22,7 +22,46 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        function log() {
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        /* div */
+        lista.parentNode.log()
+        /* text li text li text li text */
+        lista.childNodes.log()
+
+        const primeiro = lista.firstChild
+        /*text*/
+        primeiro.log()
+        /* li */
+        primeiro.nextSibling.log()
+
+        const ultimo = lista.lastChild
+        /* text */
+        ultimo.log()
+        // ultimo.nextSibling.log()
+        /* li */
+        ultimo.previousSibling.log()
+
+        /* li li li */
+        lista.children.log()
+        /* li */
+        lista.children.log()
+        /* li */
+        lista.firstElementChild.log()
+        lista.lastElementChild.log()
+        /* div */
+        lista.parentNode.previousElementSibling.log()
+        lista.parentNode.nextElementSibling.log
+
+        document.querySelectorAll('div ul li').log()
     </script>
 </body>
 
