@@ -1,4 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-ReactDOM.render(<h1>React</h1>, document.getElementById('root'))
+import Saudacao from './componentes/Saudacao'
+
+ReactDOM.render(
+    <div>
+        <Saudacao tipo="Bom dia" nome="Dainara"/>
+    </div>
+    , document.getElementById('root'))
