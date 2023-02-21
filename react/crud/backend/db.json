@@ -1,0 +1,11 @@
+{
+  "users": [{
+    "id": 1,
+    "name": "Dainara Krewer",
+    "email": "dainara_krewer@hotmail.com"
+  }, {
+    "id": 2,
+    "name": "Lara Cecilia Krewer Gerhardt",
+    "email": "lara_cecilia@teste.com"
+  }]
+}
