@@ -49,7 +49,7 @@
             item.draggable = true
             item.id = item.id || `draggable-item-${index}`
             item.ondragstart = e =>
-                e.dataTransfer.setData('item-id', e.target.id)
+                e.dataTransfer.setData('item-id', e.target.#id)
         })
 
         const dropzones = document.querySelectorAll('[wm-dropzone]')

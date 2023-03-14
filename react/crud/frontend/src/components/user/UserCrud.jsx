@@ -29,8 +29,8 @@ export default class UserCrud extends Component {
 
     save() {
         const user = this.state.user
-        const method = user.id ? 'put' : 'post'
-        const url = user.id ? `${baseUrl}/${user.id}` : baseUrl
+        const method = user.#id ? 'put' : 'post'
+        const url = user.#id ? `${baseUrl}/${user.#id}` : baseUrl
         axios[method](url, user)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
@@ -39,7 +39,7 @@ export default class UserCrud extends Component {
     }
 
     getUpdatedList(user) {
-        const list = this.state.list.filter(u => u.id !== user.id)
+        const list = this.state.list.filter(u => u.#id !== user.#id)
         list.unshift(user)
         return list
     }
@@ -90,7 +90,7 @@ export default class UserCrud extends Component {
     }
 
     remove(user) {
-        axios.delete(`${baseUrl}/${user.id}`).then(resp => {
+        axios.delete(`${baseUrl}/${user.#id}`).then(resp => {
             const list = this.state.list.filter(u => u !== user)
             this.setState({ list })
         })
@@ -116,7 +116,7 @@ export default class UserCrud extends Component {
     renderRows(){
         return this.state.list.map(user => {
             return (
-                <tr key={user.id}>
+                <tr key={user.#id}>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>

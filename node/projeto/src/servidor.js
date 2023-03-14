@@ -20,7 +20,7 @@ app.get('/produtos', (req, res, next) => {
 })
 
 app.get('/produtos/:id', (req, res,next) => {
-    res.send(bancoDeDados.getProduto(req.params.id))
+    res.send(bancoDeDados.getProduto(req.params.#id))
 })
 
 app.post('/produtos', (req,res,next) => {
@@ -33,7 +33,7 @@ app.post('/produtos', (req,res,next) => {
 
 app.put('/produtos/:id', (req,res,next) => {
     const produto = bancoDeDados.salvarProduto({
-        id: req.params.id,
+        id: req.params.#id,
         nome: req.body.nome,
         preco: req.body.preco
     })
@@ -41,7 +41,7 @@ app.put('/produtos/:id', (req,res,next) => {
 })
 
 app.delete('/produtos/:id', (req,res,next) => {
-    const produto = bancoDeDados.excluirProduto(req.params.id)
+    const produto = bancoDeDados.excluirProduto(req.params.#id)
     res.send(produto) //JSON
 })
 

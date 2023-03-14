@@ -18,7 +18,7 @@ export default function Integracao() {
                 <button onClick={obterCliente}>Obter Cliente</button>
             </div>
             <ul>
-                <li>Código: {cliente.id}</li>
+                <li>Código: {cliente.#id}</li>
                 <li>Nome: {cliente.nome}</li>
                 <li>E-mail: {cliente.email}</li>
             </ul>
