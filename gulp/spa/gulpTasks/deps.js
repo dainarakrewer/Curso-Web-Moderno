@@ -10,8 +10,8 @@ function depsCSS(){
 }
 
 function depsFonts(){
-    return gulp.src('node_modules/font-awesome/fonts/*.*')
-        .pipe(gulp.dest('build/assets/fonts'))
+    return gulp.src('node_modules/font-awesome/fontes/*.*')
+        .pipe(gulp.dest('build/assets/fontes'))
 }
 
 module.exports = {
