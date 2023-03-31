@@ -1030,141 +1030,208 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="298" parent="292" name="estados">
+    <table id="298" parent="292" name="empresas">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="299" parent="292" name="prefeitos">
+    <table id="299" parent="292" name="empresas_unidades">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="300" parent="297" name="id">
+    <table id="300" parent="292" name="estados">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="301" parent="292" name="prefeitos">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="302" parent="297" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="303" parent="297" name="nome">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="304" parent="297" name="estado_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="305" parent="297" name="area">
+      <DasType>decimal(10,2 digit)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="306" parent="297" name="cidades_ibfk_1">
+      <ColNames>estado_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>estados</RefTableName>
+    </foreign-key>
+    <index id="307" parent="297" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="308" parent="297" name="estado_id">
+      <ColNames>estado_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="309" parent="297" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="310" parent="298" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int unsigned|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="301" parent="297" name="nome">
+    <column id="311" parent="298" name="nome">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="302" parent="297" name="estado_id">
-      <DasType>int unsigned|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="312" parent="298" name="cnpj">
+      <DasType>varchar(14)|0s</DasType>
       <Position>3</Position>
-    </column>
-    <column id="303" parent="297" name="area">
-      <DasType>decimal(10,2 digit)|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="304" parent="297" name="cidades_ibfk_1">
-      <ColNames>estado_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>estados</RefTableName>
-    </foreign-key>
-    <index id="305" parent="297" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="306" parent="297" name="estado_id">
-      <ColNames>estado_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="307" parent="297" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="308" parent="298" name="id">
-      <AutoIncrement>1002</AutoIncrement>
-      <DasType>int unsigned|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="309" parent="298" name="nome">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="310" parent="298" name="sigla">
-      <DasType>varchar(2)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="311" parent="298" name="regiao">
-      <DasType>enum(&apos;Norte&apos;, &apos;Nordeste&apos;, &apos;Centro-Oeste&apos;, &apos;Sudeste&apos;, &apos;Sul&apos;)|0e</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="312" parent="298" name="populacao">
-      <DasType>decimal(5,2 digit)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
     </column>
     <index id="313" parent="298" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="314" parent="298" name="nome">
-      <ColNames>nome</ColNames>
+    <index id="314" parent="298" name="cnpj">
+      <ColNames>cnpj</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="315" parent="298" name="sigla">
-      <ColNames>sigla</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="316" parent="298" name="PRIMARY">
+    <key id="315" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="317" parent="298" name="nome">
+    <key id="316" parent="298" name="cnpj">
+      <UnderlyingIndexName>cnpj</UnderlyingIndexName>
+    </key>
+    <column id="317" parent="299" name="empresa_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="318" parent="299" name="cidade_id">
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="319" parent="299" name="sede">
+      <DasType>tinyint(1)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <index id="320" parent="299" name="PRIMARY">
+      <ColNames>empresa_id
+cidade_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="321" parent="299" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="322" parent="300" name="id">
+      <AutoIncrement>1002</AutoIncrement>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="323" parent="300" name="nome">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="324" parent="300" name="sigla">
+      <DasType>varchar(2)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="325" parent="300" name="regiao">
+      <DasType>enum(&apos;Norte&apos;, &apos;Nordeste&apos;, &apos;Centro-Oeste&apos;, &apos;Sudeste&apos;, &apos;Sul&apos;)|0e</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="326" parent="300" name="populacao">
+      <DasType>decimal(5,2 digit)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="327" parent="300" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="328" parent="300" name="nome">
+      <ColNames>nome</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="329" parent="300" name="sigla">
+      <ColNames>sigla</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="330" parent="300" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="331" parent="300" name="nome">
       <UnderlyingIndexName>nome</UnderlyingIndexName>
     </key>
-    <key id="318" parent="298" name="sigla">
+    <key id="332" parent="300" name="sigla">
       <UnderlyingIndexName>sigla</UnderlyingIndexName>
     </key>
-    <column id="319" parent="299" name="id">
+    <column id="333" parent="301" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="320" parent="299" name="nome">
+    <column id="334" parent="301" name="nome">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="321" parent="299" name="cidade_id">
+    <column id="335" parent="301" name="cidade_id">
       <DasType>int unsigned|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="322" parent="299" name="prefeitos_ibfk_1">
+    <foreign-key id="336" parent="301" name="prefeitos_ibfk_1">
       <ColNames>cidade_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>cidades</RefTableName>
     </foreign-key>
-    <index id="323" parent="299" name="PRIMARY">
+    <index id="337" parent="301" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="324" parent="299" name="cidade_id">
+    <index id="338" parent="301" name="cidade_id">
       <ColNames>cidade_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="325" parent="299" name="PRIMARY">
+    <key id="339" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="326" parent="299" name="cidade_id">
+    <key id="340" parent="301" name="cidade_id">
       <UnderlyingIndexName>cidade_id</UnderlyingIndexName>
     </key>
   </database-model>
