@@ -1,0 +1,8 @@
+help - Comandos
+cls - Limpar Terminal
+show dbs - Mostrar Databases
+use wm - Usar Database wm
+db.createCollection('estados') - Criar coleção estados
+show collections - Mostrar coleções
+db.Estados.drop() - Excluir a tabela Estados
+db.estados.drop() - Excluir a tabela estados
